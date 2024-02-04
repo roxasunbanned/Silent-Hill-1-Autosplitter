@@ -14,17 +14,22 @@ startup {
 
 	vars.Helper.Load = (Func<dynamic, bool>)(emu => 
 	{
-		emu.MakeString("UGamecode", 10, 0x009244);		//SLUS-00707
+		emu.MakeString("Gamecode", 11, 0x9244);		//SLUS-00707 / SLPM-86192
 		emu.Make<int>("U_IGT", 0xBCC84);
+		emu.Make<int>("J_IGT", 0xBF1B4);
 		return true;
 	});
 }
 
 update
 {
-	current.IGT = current.U_IGT;
+	if(current.Gamecode == "SLUS_007.07") {
+		current.IGT = current.U_IGT;
+	} else {
+		current.IGT = current.J_IGT;
+	}
 }
 
 gameTime {
-	return TimeSpan.FromSeconds(current.U_IGT / 4096f);
+	return TimeSpan.FromSeconds(current.IGT / 4096f);
 }
