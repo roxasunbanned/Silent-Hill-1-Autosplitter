@@ -1,6 +1,6 @@
 /*
 	ASL script for Silent Hill 1
-	- GitHub: https://github.com/BoredOfSpeedruns/Silent-Hill-1-Autosplitter
+	- GitHub: https://github.com/roxasunbanned/Silent-Hill-1-Autosplitter
 	emu-help-v2 created by Jujstme
 	- GitHub: https://github.com/Jujstme
 */
